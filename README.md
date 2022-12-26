@@ -1,1 +1,1 @@
-# Khan_Academy_Projects
+# Khan_Academy_SQL_Projects
