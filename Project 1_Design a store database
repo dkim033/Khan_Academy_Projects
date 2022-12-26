@@ -1,0 +1,21 @@
+/* Create a table for clothing store aisles */
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, price NUMERIC, quantity INTEGER);
+
+INSERT into clothing_store VALUES (1, "pants", 5, 5.99, 9);
+INSERT into clothing_store VALUES (2, "t-shirts", 4, 3.99, 14);
+INSERT into clothing_store VALUES (3, "shoes", 6, 14.99, 20);
+INSERT into clothing_store VALUES (4, "hats", 2, 4.50, 13);
+INSERT into clothing_store VALUES (5, "belts", 1, 2.99, 5);
+INSERT into clothing_store VALUES (6, "socks", 6, 1.50, 30);
+INSERT into clothing_store VALUES (7, "sweaters", 4, 18.99, 17);
+INSERT into clothing_store VALUES (8, "boots", 6, 20.50, 7);
+INSERT into clothing_store VALUES (9, "gloves", 2, 3.50, 10);
+INSERT into clothing_store VALUES (10, "shades", 1, 15.50, 30);
+INSERT into clothing_store VALUES (11, "head bands", 1, 2.99, 13);
+INSERT into clothing_store VALUES (12, "shorts", 5, 4.50, 12);
+INSERT into clothing_store VALUES (13, "dress shirts", 7, 29.50, 14);
+INSERT into clothing_store VALUES (14, "dress pants", 8, 30.50, 15);
+INSERT into clothing_store VALUES (15, "ties", 1, 7.99, 17);
+
+/* Display everything from the table and order by the Price*/
+SELECT * FROM clothing_store ORDER BY price
