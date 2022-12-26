@@ -1,0 +1,37 @@
+/* Create a table about the people and what they do here */
+CREATE TABLE movie_stars (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    dob TEXT,
+    movie TEXT,
+    married TEXT,
+    partner TEXT);
+    
+INSERT INTO movie_stars (name, dob, movie, married, partner) VALUES ("John Krasinski", "1979-10-20", "A Quiet Place", "Yes", "Emily Blunt");
+INSERT INTO movie_stars (name, dob, movie, married, partner) VALUES ("Kurt Russell", "1951-03-17", "Miracle", "Yes", "Goldie Hawn");
+INSERT INTO movie_stars (name, dob, movie, married, partner) VALUES ("Jesse Plemons", "1988-04-03", "Jungle Cruise", "Yes", "Kirsten Dunst");
+INSERT INTO movie_stars (name, dob, movie, married, partner) VALUES ("Emily Blunt", "1983-02-23", "Mary Poppins Returns", "Yes", "John Krasinski");
+INSERT INTO movie_stars (name, dob, movie, married, partner) VALUES ("Goldie Hawn", "1945-11-21", "Overboard", "Yes", "Kurt Russell");
+INSERT INTO movie_stars (name, dob, movie, married, partner) VALUES ("Kirsten Dunst", "1982-04-30", "Spider-man", "Yes", "Jesse Pelmons");
+
+/* Create a table for movie casts */
+CREATE TABLE movie_casts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_name TEXT,
+    main_actor TEXT,
+    main_actress TEXT,
+    release_year INTEGER);
+
+INSERT INTO movie_casts (movie_name, main_actor, main_actress, release_year) VALUES ("A Quiet Please", "John Krasinski", "Emily Blunt", 2018);
+INSERT INTO movie_casts (movie_name, main_actor, main_actress, release_year) VALUES ("Miracle", "Kurt Russell", "Patricia Clarkson", 2004);
+INSERT INTO movie_casts (movie_name, main_actor, main_actress, release_year) VALUES ("Jungle Cruise", "Dwayne Johnson", "Emily Blunt", 2021);
+INSERT INTO movie_casts (movie_name, main_actor, main_actress, release_year) VALUES ("Mary Poppins Returns", "Lin-Manuel Miranda", "Emily Blunt", 2018);
+INSERT INTO movie_casts (movie_name, main_actor, main_actress, release_year) VALUES ("Overboard", "Kurt Russell", "Goldie Hawn", 1987);
+INSERT INTO movie_casts (movie_name, main_actor, main_actress, release_year) VALUES ("Spider-man", "Tobey Mcguire", "Kirsten Dunst", 2002);
+
+/* Movies with married couple as the main actor and actress */
+SELECT movie_stars.name, movie_stars.partner, movie_casts.movie_name
+    FROM movie_stars
+    JOIN movie_casts
+    ON movie_stars.name = movie_casts.main_actor
+        AND movie_stars.partner = movie_casts.main_actress;
