@@ -1,0 +1,26 @@
+/* What does the app's SQL look like? */
+CREATE TABLE ff12 (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    location TEXT,
+    level INTEGER,
+    play_time INTEGER,
+    date TEXT);
+    
+INSERT INTO ff12 (location, level, play_time, date) VALUES ("Rabanaster", 12, 130, "2022-11-22");
+INSERT INTO ff12 (location, level, play_time, date) VALUES ("sochi", 11, 128, "2022-11-12");
+INSERT INTO ff12 (location, level, play_time, date) VALUES ("Gina", 15, 150, "2022-11-30");
+INSERT INTO ff12 (location, level, play_time, date) VALUES ("Morphis", 16, 155, "2022-12-1");
+INSERT INTO ff12 (location, level, play_time, date) VALUES ("Erypth", 17, 160, "2022-12-3");
+INSERT INTO ff12 (location, level, play_time, date) VALUES ("Archedia", 20, 188, "2022-12-7");
+
+SELECT * FROM ff12;
+
+/* Update a location */
+UPDATE ff12 SET location = "Giaya" WHERE id = 3;
+
+SELECT * FROM ff12;
+
+/* Delete a row */
+DELETE FROM ff12 WHERE id = 2;
+
+SELECT * FROM ff12;
